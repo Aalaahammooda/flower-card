@@ -141,8 +141,22 @@ const compareCards = () => {
     secondCover.classList.toggle("hide")
     firstCard=null
     secondCard=null
-    },1000)
+    },500)
   }
 }
 
+
+//restart game
+
+
+
+
+
+
+
 startGame()
+
+
+
+
+

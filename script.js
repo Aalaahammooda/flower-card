@@ -10,16 +10,72 @@
 
 let cards = document.querySelectorAll(".box")
 
-let cardBoard = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+// let cardBoard = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
 
-// let r = Math.floor(Math.random() * 12)
+// let cardsBoard = [
+//   {
+//     itCard: "yellow",
+//     imgUrl: "images/yellow f.jpeg",
+//     itOpen: false,
+//     matchCard: false,
+//   },
+//   {
+//     itCard: "yellow",
+//     imgUrl: "images/yellow f.jpeg",
+//     itOpen: false,
+//     matchCard: false,
+//   },
+//   {
+//     itCardCard: "pink",
+//     imgUrl: "images/pink f.jpeg",
+//     itOpen: false,
+//     matchCard: false,
+//   },
+//   {
+//     itCardCard: "pink",
+//     imgUrl: "images/pink f.jpeg",
+//     itOpen: false,
+//     matchCard: false,
+//   },
+//   {
+//     itCardCard: "red",
+//     imgUrl: "images/red f.jpeg",
+//     itOpen: false,
+//     matchCard: false,
+//   },
+//   {
+//     itCardCard: "red",
+//     imgUrl: "images/red f.jpeg",
+//     itOpen: false,
+//     matchCard: false,
+//   },
+//   {
+//     itCardCard: "purple",
+//     imgUrl: "images/purple f.jpeg",
+//     itOpen: false,
+//     matchCard: false,
+//   },
+//   {
+//     itCardCard: "purple",
+//     imgUrl: "images/purple f.jpeg",
+//     itOpen: false,
+//     matchCard: false,
+//   },
+// ]
 
 let firstCard = null
 let secondCard = null
 
+let cardContainer = null
+
 const startGame = () => {
   flipEventListeners()
+  // shuffleCards()
 }
+//to choose card random
+// const shuffleCards = () => {
+//   cardBoard.sort(() => Math.random - 0.5)
+// }
 
 const flipEventListeners = () => {
   cards.forEach((card) => {
@@ -28,8 +84,11 @@ const flipEventListeners = () => {
 }
 
 const flipCard = (event) => {
+  console.log("Flipping card...")
   const cardContainer = event.target.parentElement
-  console.log(`cardContainer clicked ${cardContainer.classList}`)
+  // Display block for .firstFace & Display none for .cover
+  cardContainer.querySelector(".firstface").classList.toggle("show")
+  cardContainer.querySelector(".cover").classList.toggle("hide")
 
   // Is this the first or second card
   if (firstCard) {
@@ -47,6 +106,18 @@ const compareCards = () => {
   const secondCardColor = secondCard.getAttribute("data-value")
 
   // Compare here
+  if (firstCardColor === secondCardColor) {
+    console.log("It's a match")
+    firstCard.parentElement.removeEventListener("click", flipCard)
+    secondCard.parentElement.removeEventListener("click", flipCard)
+    firstCard = null
+    secondCard = null
+  } else {
+    console.log("Not a match")
+    // Flip cards back to cover
+    cardContainer.querySelector(".firstface").classList.toggle("show")
+    cardContainer.querySelector(".cover").classList.toggle("hide")
+  }
 }
 
 startGame()

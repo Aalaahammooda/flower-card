@@ -70,6 +70,7 @@ let cardContainer = null
 
 const startGame = () => {
   flipEventListeners()
+
   // shuffleCards()
 }
 //to choose card random
@@ -86,6 +87,7 @@ const flipEventListeners = () => {
 const flipCard = (event) => {
   console.log("Flipping card...")
   const cardContainer = event.target.parentElement
+
   // Display block for .firstFace & Display none for .cover
   cardContainer.querySelector(".firstface").classList.toggle("show")
   cardContainer.querySelector(".cover").classList.toggle("hide")
@@ -115,9 +117,16 @@ const compareCards = () => {
   } else {
     console.log("Not a match")
     // Flip cards back to cover
-    cardContainer.querySelector(".firstface").classList.toggle("show")
-    cardContainer.querySelector(".cover").classList.toggle("hide")
+    firstCard.classList.toggle("show")
+    // Step 1 hide second card
+    // Step 2 show first card cover
+    // Step 3 show second card cover
+
+    
   }
 }
+ 
+
+ 
 
 startGame()

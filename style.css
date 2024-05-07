@@ -55,10 +55,12 @@ body {
 
 .show {
   display: block;
+  transform:rotateY('180deg') ;
 }
 
 .hide {
   display: none;
+  transform:rotateY('180deg') ;
 }
 
 

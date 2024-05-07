@@ -94,6 +94,8 @@ const flipCard = (event) => {
   // Display block for .firstFace & Display none for .cover
   cardContainer.querySelector(".firstface").classList.toggle("show")
   cardContainer.querySelector(".cover").classList.toggle("hide")
+  
+
 
   // Is this the first or second card
   if (firstCard) {
@@ -134,8 +136,9 @@ const compareCards = () => {
     // Step 2 show first card cover
     firstCover.classList.toggle("hide")
     // Step 3 show second card cover
-    secondCover.classList.toggle("show")
-    
+    secondCover.classList.toggle("hide")
+    firstCard=null
+    secondCard=null
   
   }
 }

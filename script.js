@@ -129,6 +129,8 @@ const compareCards = () => {
     secondCard = null
   } else {
     console.log("Not a match")
+
+    setTimeout(() => {
     // Flip cards back to cover
     firstCard.classList.toggle("show")
     // Step 1 hide second card
@@ -139,7 +141,7 @@ const compareCards = () => {
     secondCover.classList.toggle("hide")
     firstCard=null
     secondCard=null
-  
+    },1000)
   }
 }
 

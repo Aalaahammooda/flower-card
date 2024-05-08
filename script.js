@@ -9,59 +9,11 @@
 // Call on a function that will put random images in the array
 
 let cards = document.querySelectorAll(".box")
+//let cards = []
 
-// let cardBoard = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+ //let cardBoard = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
 
-// let cardsBoard = [
-//   {
-//     itCard: "yellow",
-//     imgUrl: "images/yellow f.jpeg",
-//     itOpen: false,
-//     matchCard: false,
-//   },
-//   {
-//     itCard: "yellow",
-//     imgUrl: "images/yellow f.jpeg",
-//     itOpen: false,
-//     matchCard: false,
-//   },
-//   {
-//     itCardCard: "pink",
-//     imgUrl: "images/pink f.jpeg",
-//     itOpen: false,
-//     matchCard: false,
-//   },
-//   {
-//     itCardCard: "pink",
-//     imgUrl: "images/pink f.jpeg",
-//     itOpen: false,
-//     matchCard: false,
-//   },
-//   {
-//     itCardCard: "red",
-//     imgUrl: "images/red f.jpeg",
-//     itOpen: false,
-//     matchCard: false,
-//   },
-//   {
-//     itCardCard: "red",
-//     imgUrl: "images/red f.jpeg",
-//     itOpen: false,
-//     matchCard: false,
-//   },
-//   {
-//     itCardCard: "purple",
-//     imgUrl: "images/purple f.jpeg",
-//     itOpen: false,
-//     matchCard: false,
-//   },
-//   {
-//     itCardCard: "purple",
-//     imgUrl: "images/purple f.jpeg",
-//     itOpen: false,
-//     matchCard: false,
-//   },
-// ]
+ 
 
 let firstCard = null
 let secondCard = null
@@ -73,13 +25,37 @@ let cardContainer = null
 
 const startGame = () => {
   flipEventListeners()
-
-  // shuffleCards()
+  //shuffleCards()
+  // letRandom()
 }
 //to choose card random
-// const shuffleCards = () => {
-//   cardBoard.sort(() => Math.random - 0.5)
+
+
+
+//const shuffleCards=() =>{
+  // console.log(`originalCards `, originalCards)
+  // // While originalCards has cards inside of it
+  // while(originalCards.length > 0){
+  //   // Generate random number between 0 and the length of originalCards
+  //   const randomIndex = Math.floor(Math.random() * (0, originalCards.length)) 
+  //   console.log(`randomIndex => ${randomIndex}`)
+  //   // Get the card at random location generated above and put in cards
+  //   const randomCard = originalCards[randomIndex]
+  //   // TODO add card to cards
+  //   cards.push(randomCard)
+  //   // Remove random card that was selected from original cards
+  //   originalCards.splice(randomIndex, 1)
+  // }
+  // console.log(`cards `, cards)
+//}
+
+// function letRandom(min ,max){
+//   let r = Math.floor(Math.random() * (max - min+1));
+//   return r
 // }
+// r=letRandom(0,8)
+// console.log(letRandom)
+
 
 const flipEventListeners = () => {
   cards.forEach((card) => {
@@ -121,6 +97,9 @@ const compareCards = () => {
   const secondCardColor = secondCard.getAttribute("data-value")
 
   // Compare here
+  
+    
+  
   if (firstCardColor === secondCardColor) {
     console.log("It's a match")
     firstCard.parentElement.removeEventListener("click", flipCard)
@@ -146,7 +125,7 @@ const compareCards = () => {
 }
 
 
-//restart game
+
 
 
 

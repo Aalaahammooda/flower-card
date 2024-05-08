@@ -78,8 +78,9 @@ body {
 
 h2 {
   text-align: center;
-  color: rgb(241, 189, 125);
+  color: rgb(21, 21, 21);
   padding: 30px;
+  font-family: 'Poetsen One';
 }
 
 button {
@@ -111,3 +112,4 @@ button:hover {
 #play{
   margin-left: 30%;
 }
+

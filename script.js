@@ -8,6 +8,8 @@
 // Create a grid/gameboard using an array
 // Call on a function that will put random images in the array
 
+
+//globle varible
 const cards = document.querySelectorAll(".box")
 const restart = document.querySelector("#restart")
 
@@ -19,44 +21,14 @@ let secondCover = null
 
 let cardContainer = null
 
+//function to start game 
 const startGame = () => {
   flipEventListeners()
-  //shuffleCards()
-  // letRandom()
+  
+  
 }
-function random() {
-  cards.forEach((card) => {
-    const randomIndex = Math.floor(Math.random() * cards.length)
 
-    card.style.order = randomIndex
-  })
-}
-//to choose card random
-
-//const shuffleCards=() =>{
-// console.log(`originalCards `, originalCards)
-// // While originalCards has cards inside of it
-// while(originalCards.length > 0){
-//   // Generate random number between 0 and the length of originalCards
-//   const randomIndex = Math.floor(Math.random() * (0, originalCards.length))
-//   console.log(`randomIndex => ${randomIndex}`)
-//   // Get the card at random location generated above and put in cards
-//   const randomCard = originalCards[randomIndex]
-//   // TODO add card to cards
-//   cards.push(randomCard)
-//   // Remove random card that was selected from original cards
-//   originalCards.splice(randomIndex, 1)
-// }
-// console.log(`cards `, cards)
-//}
-
-// function letRandom(min ,max){
-//   let r = Math.floor(Math.random() * (max - min+1));
-//   return r
-// }
-// r=letRandom(0,8)
-// console.log(letRandom)
-
+//funtion add eventListeners
 const flipEventListeners = () => {
   cards.forEach((card) => {
     card.addEventListener("click", flipCard)
@@ -86,14 +58,13 @@ const flipCard = (event) => {
 }
 
 const compareCards = () => {
-  //const firstCover=firstCover.querySelector(".cover")
-  //const secoundCover=secoundCover.querySelector(".cover")
+  
 
   const firstCardColor = firstCard.getAttribute("data-value")
   const secondCardColor = secondCard.getAttribute("data-value")
 
-  // Compare here
-
+  // Compare her to see the firstcard and secound card match or not 
+  
   if (firstCardColor === secondCardColor) {
     console.log("It's a match")
     firstCard.parentElement.removeEventListener("click", flipCard)
@@ -117,6 +88,8 @@ const compareCards = () => {
     }, 500)
   }
 }
+
+//restart game 
 function restartGame() {
   let firstCard = null
   let secondCard = null
@@ -136,8 +109,21 @@ function restartGame() {
   startGame()
 
 }
-// function to start game
+
+//make random card to choose
+function random() {
+  cards.forEach((card) => {
+    const randomIndex = Math.floor(Math.random() * cards.length)
+
+    card.style.order = randomIndex
+  })
+}
+
+
+
+// function call to start game
 startGame()
-//add
+
+//add restart button 
 const againGame = document.getElementById("restart")
 restart.addEventListener("click", restartGame)

@@ -3,6 +3,8 @@ h1 {
   font-size: 50px;
   background-color: rgb(240, 205, 159);
   color: rgb(120, 120, 248);
+  margin: 10px;
+  padding: 50px;
 }
 
 #memory-Card {
@@ -81,13 +83,31 @@ h2 {
 }
 
 button {
+  color: rgb(10, 11, 11);
+  border: black solid;
+
+  background-color: rgba(239, 157, 223, 0.879);
+  font: size 30px;
   
-color: rgb(10, 11, 11);
- border: black solid;
- 
- background-color: rgba(239, 157, 223, 0.879);
- font: size 30px;
- position: fixed;
- margin-left: 540px;
- cursor: pointer;
+  margin:40%;
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 200px;
+  margin-top: 30px;
+}
+button:hover {
+  background-color: blueviolet;
+  border: 4px solid black;
+  border-radius: 5px;
+}
+#greeting{
+  font-family: 'Poetsen One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+#play{
+  margin-left: 30%;
 }

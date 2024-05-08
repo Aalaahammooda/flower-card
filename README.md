@@ -15,9 +15,7 @@
 ### ***Technologies Used***
 * HTML
 * CSS
-  * Sub-item 1
-  * Sub-item 2
-* JAVA
+* JAVASCRIPT
 ***
 
 ### ***Getting Started***

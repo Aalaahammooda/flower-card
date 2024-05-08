@@ -132,7 +132,8 @@ function restartGame() {
 
   startGame()
 }
-
+// function to start game 
 startGame()
+//add 
 const againGame = document.getElementById("restart")
 restart.addEventListener("click", restartGame)

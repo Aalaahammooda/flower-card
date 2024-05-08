@@ -8,11 +8,8 @@
 // Create a grid/gameboard using an array
 // Call on a function that will put random images in the array
 
-let cards = document.querySelectorAll(".box")
+const cards = document.querySelectorAll(".box")
 const restart = document.querySelector("#restart")
-//let cards = []
-
-//let cardBoard = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
 
 let firstCard = null
 let secondCard = null
@@ -26,6 +23,13 @@ const startGame = () => {
   flipEventListeners()
   //shuffleCards()
   // letRandom()
+}
+function random() {
+  cards.forEach((card) => {
+    const randomIndex = Math.floor(Math.random() * cards.length)
+
+    card.style.order = randomIndex
+  })
 }
 //to choose card random
 
@@ -116,24 +120,24 @@ const compareCards = () => {
 function restartGame() {
   let firstCard = null
   let secondCard = null
-  
+
   let firstCover = null
   let secondCover = null
   let cardContainer = null
   cards.forEach((card) => {
-    card.querySelector(".firstface").classList.remove("show");
-    card.querySelector(".cover").classList.remove("hide");
-
+    card.querySelector(".firstface").classList.remove("show")
+    card.querySelector(".cover").classList.remove("hide")
 
     cards.forEach((card) => {
-      card.removeEventListener("click", flipCard);
-    });
-  });
-
+      card.removeEventListener("click", flipCard)
+    })
+  })
+  random()
   startGame()
+
 }
-// function to start game 
+// function to start game
 startGame()
-//add 
+//add
 const againGame = document.getElementById("restart")
 restart.addEventListener("click", restartGame)

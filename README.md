@@ -45,7 +45,7 @@
   
 ***
 
-### ***Credits***
 
-##### Markdown Cheatsheet: [GitHub](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+
+
 ***

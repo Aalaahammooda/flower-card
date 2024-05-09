@@ -28,13 +28,14 @@ const startGame = () => {
   
 }
 
-//funtion add eventListeners
+// add eventListeners
 const flipEventListeners = () => {
   cards.forEach((card) => {
     card.addEventListener("click", flipCard)
   })
 }
 
+//flip card
 const flipCard = (event) => {
   console.log("Flipping card...")
   const cardContainer = event.target.parentElement
@@ -121,7 +122,7 @@ function random() {
 
 
 
-// function call to start game
+//  call to start game
 startGame()
 
 //add restart button 

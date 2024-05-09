@@ -125,6 +125,6 @@ function random() {
 //  call to start game
 startGame()
 
-//add restart button 
-const againGame = document.getElementById("restart")
+//add  eventListener to restart button 
+
 restart.addEventListener("click", restartGame)

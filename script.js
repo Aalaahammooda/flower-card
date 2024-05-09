@@ -9,7 +9,7 @@
 // Call on a function that will put random images in the array
 
 
-//globle varible
+//Globle varible
 const cards = document.querySelectorAll(".box")
 const restart = document.querySelector("#restart")
 
@@ -111,7 +111,7 @@ function restartGame() {
 
 }
 
-//make random card to choose
+//make random card to choose random
 function random() {
   cards.forEach((card) => {
     const randomIndex = Math.floor(Math.random() * cards.length)
